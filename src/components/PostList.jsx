@@ -32,7 +32,15 @@ export async function PostList({ currentPage = 1 }) {
               >
                 {post.title}
               </Link>
-              <p className="text-zinc-700">posted by {post.name}</p>
+              <p className="text-zinc-700">
+                posted by{" "}
+                <Link
+                  href={`/user/${encodeURIComponent(post.name)}`}
+                  className="text-xl hover:text-pink-500"
+                >
+                  {post.name}
+                </Link>
+              </p>
             </div>
           </li>
         ))}
